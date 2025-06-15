@@ -54,7 +54,19 @@ val waveFunc: GenerativeFunc = { i, t, _ ->
     Offset(px, py)
 }
 ```
+
 ---
+
+## 📸 Screenshots
+
+| Alien life | Spiral Galaxy | Chaos Bloom |
+|:---:|:---:|:---:|
+| ![Alien](screenshots/alien.gif) | ![Galaxy](screenshots/galaxy.gif) |  ![Bloom](screenshots/bloom.gif) |
+
+---
+
+
+
 
 ## Parser maison & expressions dynamiques
 
@@ -112,7 +124,9 @@ Dans l’esprit minimaliste et créatif du projet, on prévoit une fonctionnalit
 - Mettre en avant des fonctions mathématiques expressives et minimalistes
 - Expérimenter la fusion du code golf et de l’art génératif sur Android
 
+
 ---
+
 
 ## 🧠 Inspirations
 
@@ -124,13 +138,6 @@ Dans l’esprit minimaliste et créatif du projet, on prévoit une fonctionnalit
 
 ---
 
-## 📜 Licence
 
-Projet open source et libre, destiné à un usage personnel, créatif et expérimental.  
-Fait pour les esprits curieux qui aiment dessiner avec des fonctions.
-
----
-
-> Made with math & ❤️ by Sam
 
 
