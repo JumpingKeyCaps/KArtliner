@@ -115,17 +115,17 @@ fun TestAnimatedPattern() {
                 offset = offset
             ) { i, t, _ ->
 
-                //@@@@@@@ Whaouu!
+                //todo @@@@@@@ Whaouu!
        //         generateInsectoidWhaoou(i=i,t=t)
 
-                //@@@@@@ Spiral Galaxy Tentacle
-                generateGalaxySpiral(i,t)
-
-                //@@@@@@ Biowave Oscillator
+                //todo @@@@@@ Spiral Galaxy Tentacle
+         //       generateGalaxySpiral(i,t)
 
 
-                //@@@@@@ Spiral Core with Orbiting Pulse
 
+
+                //todo @@@@@@ Spiral Core with Orbiting Pulse
+                generateCorePulse(i, t)
 
                 //@@@@@@ Web Fractal Pulse
 
@@ -168,6 +168,17 @@ fun generateGalaxySpiral(i: Int, t: Float): Offset {
     val y = r * sin(theta) + 10f * cos(i * 0.01f - t * 0.3f)
     return Offset(x, y)
 }
+
+fun generateCorePulse(i: Int, t: Float): Offset {
+    val angle = i * 0.2f + t
+    val radius = 30f + 10f * sin(i * 0.05f + t)
+    val x = radius * cos(angle) + sin(t + i * 0.1f) * 5f
+    val y = radius * sin(angle) + cos(t - i * 0.1f) * 5f
+    return Offset(x, y)
+}
+
+
+
 
 
 
