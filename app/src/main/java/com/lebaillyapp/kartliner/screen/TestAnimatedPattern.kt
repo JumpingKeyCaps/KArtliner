@@ -112,7 +112,7 @@ fun TestAnimatedPattern() {
                // generateChaoticBloom(i,t)
 
                 //todo @@@@@@@ Alien Insect
-                //   generateInsectAlienPoint(i, t)
+            //       generateInsectAlienPoint(i, t)
 
 
             }
