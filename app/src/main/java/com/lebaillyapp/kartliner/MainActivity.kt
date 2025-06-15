@@ -128,11 +128,11 @@ fun TestAnimatedPattern() {
 
                 // generateCorePulse(i, t)
 
-                //@@@@@@ Web Fractal Pulse
-                generateFractalWeb(i, t)
+                //todo @@@@@@ Web Fractal Pulse
+                //generateFractalWeb(i, t)
 
-                //@@@@@@  Chaotic Bloom (flowerburst)
-
+                //todo @@@@@@  Chaotic Bloom (flowerburst)
+                generateChaoticBloom(i,t)
 
              //   generateInsectAlienPoint(i, t)
 
@@ -183,6 +183,15 @@ fun generateFractalWeb(i: Int, t: Float): Offset {
     val x = i.toFloat()
     val wave = sin(x / 15f + t) + sin(x / 7f - t * 1.5f)
     val y = wave * x * 0.2f + cos(x * 0.05f + t) * 20f
+    return Offset(x, y)
+}
+
+
+fun generateChaoticBloom(i: Int, t: Float): Offset {
+    val a = i * 0.2f
+    val r = 20f + 10f * sin(a * 3 + t) + 5f * cos(a * 5 - t * 0.7f)
+    val x = r * cos(a)
+    val y = r * sin(a)
     return Offset(x, y)
 }
 
