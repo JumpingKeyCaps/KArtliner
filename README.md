@@ -4,9 +4,9 @@
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat&logo=android&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**KArtliner** est un projet Android expérimental qui transforme des fonctions mathématiques ultra-courtes en animations graphiques temps réel, à l'aide de Jetpack Compose.
+**KArtliner** is an experimental Android project that transforms ultra-short mathematical functions into real-time graphic animations using Jetpack Compose.
 
-Inspiré de **Processing**, **p5.js**, **code golf**, et de l’art génératif, KArtliner permet de dessiner des formes visuelles complexes à partir de **fonctions one-liner** ou d’expressions compactes.
+Inspired by Processing, p5.js, code golf, and generative art, KArtliner lets you create complex visual shapes from one-liner functions or compact expressions.
 
 
 ---
@@ -14,31 +14,31 @@ Inspiré de **Processing**, **p5.js**, **code golf**, et de l’art génératif,
 
 ## 💡 Concept
 
-> Une fonction mathématique → un monde visuel.
+> A mathematical function → a visual world.
 
-KArtliner propose un environnement minimal pour créer des **dessins dynamiques à partir d'expressions mathématiques**, dans l'esprit de :
+KArtliner offers a minimal environment to create dynamic drawings from mathematical expressions, in the spirit of:
 
-- ✍️ *"function drawing"* : `(i, t) → Offset(x, y)`
-- 🧪 *code golf créatif* : une ligne de code qui génère une animation
-- ⚡ *rendu temps réel* avec `Canvas` Jetpack Compose
-- 🧠 *expérimentation mathématique visuelle* sur mobile
-
----
-
-## ✨ Fonctionnalités
-
--  Animation fluide à 30–60 fps via `InfiniteTransition` Compose
--  Support de fonctions mathématiques paramétrées `(i, t, size) → Offset`
--  Rendu vectoriel performant via `Canvas` Compose (accélération Skia GPU)
--  Architecture modulaire et flexible pour tester facilement d’autres formules
--  Gestion intelligente de la charge : 3k–5k points max par frame pour conserver la fluidité
--  Parsing dynamique d’expressions `String` pour éditer et tester des formules en live
--  Sauvegarde et partage des fonctions en format one-liner compact
-
+- ✍️ function drawing: (i, t) → Offset(x, y)
+- 🧪 creative code golf: a single line of code generating an animation
+- ⚡ real-time rendering using Jetpack Compose Canvas
+- 🧠 visual mathematical experimentation on mobile
 
 ---
 
-## 🔣 Exemple de fonction Kotlin
+## ✨ Features
+
+- Smooth animation at 30–60 fps powered by Compose’s InfiniteTransition
+- Support for parameterized math functions (i, t, size) → Offset
+- Efficient vector rendering via Compose Canvas (Skia GPU accelerated)
+- Modular, flexible architecture for easy testing of new formulas
+- Smart load management: max 3k–5k points per frame to maintain fluidity
+- Dynamic parsing of String expressions for live formula editing and testing
+- Save and share your functions as compact one-liner strings
+
+
+---
+
+## 🔣 Sample Kotlin function
 
 ```kotlin
 val waveFunc: GenerativeFunc = { i, t, _ ->
@@ -68,62 +68,75 @@ val waveFunc: GenerativeFunc = { i, t, _ ->
 
 
 
-## Parser maison & expressions dynamiques
+## Custom parser & dynamic expressions
 
-Pour faciliter la création de fonctions personnalisées, on travaille sur un **parser léger maison** capable d’interpréter des expressions mathématiques basiques :
+To facilitate creating custom functions, we are working on a lightweight custom parser capable of interpreting basic math expressions:
 
-- Fonctions supportées : `sin`, `cos`, `tan`, `hypot`, opérations `+`, `-`, `*`, `/`
-- Variables disponibles : `i` (index du point), `t` (temps), `size` (taille du canvas)
-- Exemple d’expression éditable :
+- Supported functions : `sin`, `cos`, `tan`, `hypot`, operators `+`, `-`, `*`, `/`
+- Available variables : `i` (point index), `t` (time), `size` (canvas size)
+- Example editable expression:
 
 ```kotlin
 (4 + sin(y*2 - t)*3)*cos(x/29)
 ```
 
-Ce parser convertira la chaîne en une lambda Kotlin dynamique `(i, t, size) -> Offset`, directement utilisable dans le rendu Compose.
+This parser will convert strings into dynamic Kotlin lambdas `(i, t, size) -> Offset`, ready for use in Compose rendering.
 
-Si le besoin s’en fait sentir, on pourra intégrer des bibliothèques spécialisées comme `exp4j` ou `mXparser` pour supporter des expressions plus complexes.
+If needed, we may integrate libraries like `exp4j` or `mXparser`  to support more complex expressions.
 
-Cette approche permettra la création d’un **éditeur live**, où l’utilisateur pourra écrire, tester et sauvegarder ses propres formules visuelles en temps réel.
+This approach will enable a live editor where users can write, test, and save their own visual formulas in real time.
 
 ---
 
-## 🔄 Fonction one-liner / code golf visuel
+## 🔄 One-liner functions / visual code golf
 
-Dans l’esprit minimaliste et créatif du projet, on prévoit une fonctionnalité qui :
+In the minimalist and creative spirit of the project, we plan a feature that:
 
-- Convertit une fonction Kotlin en une **chaîne de caractères compacte, one-liner**, prête à copier-coller
-- Facilite le partage et la réutilisation des formules dans l’éditeur
-- Assure un format lisible et exploitable à la manière des snippets Processing/p5.js
-- Permet de générer des œuvres visuelles partagées via des lignes de code simples
-
+- Converts Kotlin functions into compact one-liner strings ready to copy-paste
+- Makes sharing and reusing formulas easy within the editor
+- Ensures a readable, usable format similar to Processing/p5.js snippets
+- Enables sharing visual artworks through simple lines of code
+  
 ---
 
 ## 🚧 Roadmap
- - Base fonctionnelle avec Canvas animé
- - Évaluateur d’expressions String façon p5.js
- - Sliders dynamiques pour les paramètres
- - Export PNG
- - Galerie de presets
- - UI pour composer/éditer les fonctions live
+
+- Functional base with animated Canvas
+- String expression evaluator like p5.js
+- Dynamic sliders for parameters
+- PNG export
+- Preset gallery
+- UI for composing/editing live functions
 
 ---
 
-## 🔧 Dépendances techniques
+## 🔧 Technical dependencies
 
 - Kotlin  
 - Jetpack Compose (Canvas, Animation, UI)  
-- (À venir) Bibliothèque d’évaluation d’expressions mathématiques (`exp4j`, `mXparser`, ou moteur custom)  
+- (Upcoming) Math expression evaluation library (exp4j, mXparser, or custom engine)
 
 ---
 
-## 🎯 Objectifs secondaires
+## 🎯 Secondary goals
 
-- Étudier les limites CPU et GPU du rendu vectoriel Compose sur mobile
-- Offrir un bac à sable visuel pour créer des œuvres algorithmiques variées
-- Mettre en avant des fonctions mathématiques expressives et minimalistes
-- Expérimenter la fusion du code golf et de l’art génératif sur Android
+- Explore CPU and GPU limits of Compose vector rendering on mobile
+- Provide a visual sandbox for creating diverse algorithmic artworks
+- Showcase expressive, minimalist mathematical functions
+- Experiment with the fusion of code golf and generative art on Android
 
+---
+ 
+## ⚠️ Project status
+
+KArtliner is still a work in progress. 
+
+The rendering engine is fully set up, and the next major step is integrating the custom parser for dynamic math expressions.
+
+This is challenging `because Kotlin does not natively support easy runtime execution of injected code strings`.
+
+To work around this, i am developing a lightweight custom parser that translates math expression strings into executable lambdas.
+This approach is quite tricky to implement but crucial for enabling live editing and dynamic function evaluation within the app.
 
 ---
 
