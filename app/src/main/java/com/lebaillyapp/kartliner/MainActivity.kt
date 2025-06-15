@@ -79,7 +79,7 @@ fun TestAnimatedPattern() {
                 .then(doubleTapModifier)
                 .pointerInput(Unit) {
                     detectTransformGestures { _, pan, zoomChange, _ ->
-                        scale = (scale * zoomChange).coerceIn(0.5f, 50f)
+                        scale = (scale * zoomChange).coerceIn(0.05f, 50f)
                         offset += pan
                     }
                 }
@@ -116,9 +116,22 @@ fun TestAnimatedPattern() {
             ) { i, t, _ ->
 
                 //@@@@@@@ Whaouu!
-                generateInsectoidWhaoou(i=i,t=t)
+       //         generateInsectoidWhaoou(i=i,t=t)
 
-                //
+                //@@@@@@ Spiral Galaxy Tentacle
+                generateGalaxySpiral(i,t)
+
+                //@@@@@@ Biowave Oscillator
+
+
+                //@@@@@@ Spiral Core with Orbiting Pulse
+
+
+                //@@@@@@ Web Fractal Pulse
+
+
+                //@@@@@@  Chaotic Bloom (flowerburst)
+
 
              //   generateInsectAlienPoint(i, t)
 
@@ -128,6 +141,9 @@ fun TestAnimatedPattern() {
     }
 }
 
+
+
+//Some design pattern ...
 
 fun generateInsectoidWhaoou(i: Int,t: Float): Offset {
     val x = i.toFloat()
@@ -141,6 +157,22 @@ fun generateInsectoidWhaoou(i: Int,t: Float): Offset {
     val py = q * sin(c) + d * 39
     return Offset(px, py)
 }
+
+
+
+
+fun generateGalaxySpiral(i: Int, t: Float): Offset {
+    val theta = i * 0.15f + t * 0.5f
+    val r = 20f + 0.5f * i + 5f * sin(t + i * 0.05f)
+    val x = r * cos(theta) + 20f * sin(i * 0.02f + t)
+    val y = r * sin(theta) + 10f * cos(i * 0.01f - t * 0.3f)
+    return Offset(x, y)
+}
+
+
+
+
+
 
 
 ////////////////Manual training
